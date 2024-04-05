@@ -45,7 +45,7 @@ cd src && cd backend
 2. Inicialize o servidor Flask
 
 ```bash
-pyhton run.py
+python3 run.py
 ```
 
 
