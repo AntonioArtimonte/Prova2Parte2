@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova parte 2</title>
+    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+</head>
+<body>
+    <div class="mainDiv">
+        <h1>Prova parte 2</h1>
+        <div>
+            <button hx-get="/ping" hx-trigger="click">Ping</button>
+            <div class="numbers"></div>
+        </div>
+        <div style="margin-top:25px">
+
+            <form>
+                <label for="dados">Mensagem:</label>
+                <input type="dados" id="dados" name="dados" required>
+                <button hx-post="/echo" hx-trigger="submit" hx-vals='{"dados":"dados"}' hx-target="#data" hx-swap="innerHTML"'>Enviar mensagem</button>
+        </div>
+    </div>
+
+    <div>
+        <h1 id="data">Logs</h1>
+    </div>
+
+    <div>
+        <button hx-get="/dash" >Clique para abrir as logs</button>
+    </div>
+</body>
+</html>
